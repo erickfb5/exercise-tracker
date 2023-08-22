@@ -5,10 +5,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 const app = express();
-const connectDB = require('./config/dbConn');
-const { rootRoute, userRoutes, exerciseRoutes, logsRoutes } = require("./routes");
 
 // Connect to MongoDB
+const connectDB = require('./config/dbConn');
 connectDB();
 
 // Middlewares
@@ -16,11 +15,9 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// API Routes
-app.use("/", rootRoute);
-app.use("/api/users", userRoutes);
-app.use("/api/users/:_id/exercises", exerciseRoutes);
-app.use("/api/users/:_id/logs", logsRoutes);
+// Routes
+const routes = require("./routes.js");
+app.use("/", routes);
 
 app.all('*', (req, res) => {
   res.status(404);

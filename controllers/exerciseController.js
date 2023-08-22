@@ -6,10 +6,14 @@ const addExercise = async (req, res) => {
   const { _id } = req.params;
   const { description, duration, date } = req.body;
 
-  try {
-    const user = await User.findById(_id);
-    if (!user) return res.status(404).json({ error: "User not found" });
+  console.log(" request ==> ", req)
 
+  try {
+    console.log("Received request with _id:", _id); // Log the _id from the request
+
+    const user = await User.findById(_id);
+
+    console.log("User found:", user); // Log the user object
     const exercise = new Exercise({
       userId: _id,
       description,
