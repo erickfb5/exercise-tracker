@@ -2,24 +2,34 @@
   box-sizing: border-box;
 }
 
+:root {
+  --ice: #99d3df;
+  --fresh-water: #88bbd6;
+  --plaster: #cdcdcd;
+  --linen: #e9e9e9;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: whitesmoke;
+  background-color: var(--linen);
   text-align: center;
 }
 
 h1 {
-  font-weight: bold;
+  font-size: 3rem;
+  color: #333;
 }
 
 p {
   max-width: 900px;
+  font-size: 1.2rem;
+  color: #666;
 }
 
 form {
   margin-bottom: 25px;
   padding: 15px;
-  background-color: #87D37C;
+  background-color: var(--linen);
   display: inline-block;
   width: 100%;
   max-width: 340px;
@@ -33,53 +43,45 @@ input {
   width: 100%;
   border: 1px solid lightgrey;
   border-radius: 3px;
-  font-size: 16px;
+  font-size: 1.25rem;
+  height: 50px;
 }
 
-input[type=submit] {
-  font-size: 16px;
+input[type="submit"] {
+  font-size: 1.5rem;
   border-radius: 3px;
-  background-color: #E4F1FE;
+  background-color: var(--ice);
   border: 1px solid grey;
   box-shadow: 2px 2px #999;
   cursor: pointer;
+  width: 100%;
+  height: 40px;
 }
 
-input[type=submit]:hover {
-  background-color: #FFFEC4;
+input[type="submit"]:hover {
+  background-color: #e8bc7c;
 }
 
 code {
   font-family: monospace;
   font-size: 1rem;
-  background-color: #FFFEC4;
+  background-color: #e8bc7c;
   padding: 2px;
-  word-wrap: break-word; 
+  word-wrap: break-word;
 }
-
 
 .container {
   max-width: 500px;
   margin: 0 auto;
   padding: 40px;
-  background-color: #ffffff;
+  background-color: var(--fresh-water);
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-}
-
-h1 {
-  font-size: 3rem;
-  color: #333;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #666;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 a {
   text-decoration: none;
-  color: #007BFF;
+  color: #007bff;
 }
 
 a:hover {
